@@ -3,11 +3,9 @@
 import { useState } from "react";
 
 const navLinks = [
-  { label: "How it Works", href: "#how-it-works", active: true },
-  { label: "Suburbs", href: "#suburbs" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Pricing", href: "#pricing", active: false },
+  { label: "Benefits", href: "#benefits", active: false },
+  { label: "FAQ", href: "#faq", active: false },
 ];
 
 export default function Navbar() {
@@ -20,7 +18,7 @@ export default function Navbar() {
           Local Mail Marketing
         </div>
 
-        <div className="hidden md:flex items-center gap-8 flex-grow justify-center">
+        <div className="hidden md:flex items-center gap-8 grow justify-center">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -37,12 +35,14 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4 shrink-0">
-          <button className="hidden md:block px-5 py-2 text-sm font-medium text-slate-600 hover:text-blue-800 active:scale-95 transition-all">
-            Log In
-          </button>
-          <button className="px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-lg shadow-md hover:bg-primary-container active:scale-95 transition-all">
+          
+          <a
+            href="#lead-form"
+            onClick={() => setMobileOpen(false)}
+            className="px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-lg shadow-md hover:bg-primary-container active:scale-95 transition-all"
+          >
             Get Started
-          </button>
+          </a>
           <button
             className="md:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -55,23 +55,27 @@ export default function Navbar() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200 px-8 py-4 flex flex-col gap-4">
+      <div
+        className={`md:hidden bg-white border-t border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-8 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-medium text-slate-600 hover:text-blue-800"
+              className="text-sm font-medium text-slate-600 hover:text-blue-800 transition-colors duration-150"
             >
               {link.label}
             </a>
           ))}
-          <button className="text-left text-sm font-medium text-slate-600 hover:text-blue-800">
+          <button className="text-left text-sm font-medium text-slate-600 hover:text-blue-800 transition-colors duration-150">
             Log In
           </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

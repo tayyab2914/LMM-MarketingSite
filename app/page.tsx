@@ -33,13 +33,13 @@ const benefits = [
   "Free creative audit of your current brand assets",
 ];
 
-const footerLinks = [
-  "Terms of Service",
-  "Privacy Policy",
-  "Direct Mail Standards",
-  "Contact Support",
-  "Partner Program",
-];
+// const footerLinks = [
+//   "Terms of Service",
+//   "Privacy Policy",
+//   "Direct Mail Standards",
+//   "Contact Support",
+//   "Partner Program",
+// ];
 
 export default function Home() {
   return (
@@ -314,12 +314,12 @@ export default function Home() {
               Local Mail Marketing (LMM)
             </div>
             <p className="text-xs text-slate-500">
-              © 2024 Local Mail Marketing (LMM). Professional Direct Mail Solutions
+              © 2026 Local Mail Marketing (LMM). Professional Direct Mail Solutions
               for Contractors.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
+            {/* {footerLinks.map((link) => (
               <a
                 key={link}
                 href="#"
@@ -327,7 +327,7 @@ export default function Home() {
               >
                 {link}
               </a>
-            ))}
+            ))} */}
           </div>
         </div>
       </footer>

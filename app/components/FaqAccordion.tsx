@@ -40,7 +40,7 @@ export default function FaqAccordion() {
               {faq.q}
             </span>
             <span
-              className="material-symbols-outlined text-outline flex-shrink-0 transition-transform duration-200"
+              className="material-symbols-outlined text-outline shrink-0 transition-transform duration-200"
               style={{ transform: open === i ? "rotate(180deg)" : "rotate(0deg)" }}
             >
               expand_more
