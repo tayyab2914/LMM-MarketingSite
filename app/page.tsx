@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import FaqAccordion from "./components/FaqAccordion";
 import LeadForm from "./components/LeadForm";
+import PricingSection from "./components/PricingSection";
 
 const galleryItems = [
   {
@@ -166,6 +167,8 @@ export default function Home() {
           </div>
         </section>
 
+        <PricingSection />
+
         {/* Benefits Section */}
         <section id="benefits" className="py-24">
           <div className="max-w-7xl mx-auto px-8">
@@ -262,7 +265,7 @@ export default function Home() {
         </section>
 
         {/* Lead Form Section */}
-        <section className="py-24 bg-white">
+        <section id="lead-form" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight text-primary mb-6">
